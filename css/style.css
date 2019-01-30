@@ -124,7 +124,7 @@ body,
 }
 body {
   background: #eee;
-  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font: 13px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
@@ -145,6 +145,7 @@ body {
   float: left;
   width: 98.33333333333333%;
   margin: 0 0.833333333333333%;
+  margin: 0;
 }
 .left,
 .alignleft {
@@ -164,8 +165,8 @@ body {
   overflow: hidden;
 }
 #wrap {
-  height: 100%;
   width: 100%;
+  min-height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -174,7 +175,7 @@ body {
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 1;
-  background: #eee;
+  background: #fff;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -187,27 +188,21 @@ body {
     margin: 0 0.833333333333333%;
   }
 }
+#main {
+  float: none;
+}
 .article-date,
 .article-category-link,
 .archive-year,
 .widget-title {
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 2px;
   color: #999;
   margin-bottom: 1em;
   margin-left: 5px;
   line-height: 1em;
   text-shadow: 0 1px #fff;
   font-weight: bold;
-}
-.article-inner,
-.archive-article-inner {
-  background: #fff;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #ddd;
-  border-radius: 3px;
 }
 .article-entry h1,
 .widget h1 {
@@ -308,31 +303,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 300px;
   position: relative;
-  border-bottom: 1px solid #ddd;
-}
-#header:before,
-#header:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 40px;
-}
-#header:before {
-  top: 0;
-  background: -webkit-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: -moz-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: -ms-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: linear-gradient(rgba(0,0,0,0.2), transparent);
-}
-#header:after {
-  bottom: 0;
-  background: -webkit-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: -moz-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: -ms-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: linear-gradient(transparent, rgba(0,0,0,0.2));
 }
 #header-outer {
   height: 100%;
@@ -348,7 +319,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("images/banner.jpg") center #000;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -372,12 +342,10 @@ body {
 #logo {
   font-size: 40px;
   line-height: 40px;
-  letter-spacing: 2px;
 }
 #subtitle {
   font-size: 16px;
   line-height: 16px;
-  letter-spacing: 1px;
 }
 #subtitle-wrap {
   margin-top: 16px;
@@ -389,34 +357,25 @@ body {
 .nav-icon,
 .main-nav-link {
   float: left;
-  color: #fff;
-  opacity: 0.6;
+  color: #ffa500;
   text-decoration: none;
-  text-shadow: 0 1px rgba(0,0,0,0.2);
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  transition: opacity 0.2s;
   display: block;
-  padding: 20px 15px;
+  margin: 20px 15px;
 }
 .nav-icon:hover,
 .main-nav-link:hover {
-  opacity: 1;
+  color: #fff;
+  background: #ffa500;
 }
 .nav-icon {
   font-family: FontAwesome;
   text-align: center;
-  font-size: 14px;
-  width: 14px;
-  height: 14px;
+  font-size: 13px;
+  width: 13px;
+  height: 13px;
   padding: 20px 15px;
   position: relative;
   cursor: pointer;
-}
-.main-nav-link {
-  font-weight: 300;
-  letter-spacing: 1px;
 }
 @media screen and (max-width: 479px) {
   .main-nav-link {
@@ -482,7 +441,7 @@ body {
   background: none;
   color: #555;
   width: 100%;
-  font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font: 13px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   outline: none;
 }
 .search-form-input::-webkit-search-results-decoration,
@@ -506,6 +465,10 @@ body {
 }
 .article {
   margin: 50px 0;
+  max-width: 650px;
+  margin: auto;
+  font-size: 14px;
+  display: block;
 }
 .article-inner {
   overflow: hidden;
@@ -535,7 +498,7 @@ body {
   margin: 0 12px 1em;
 }
 .article-header {
-  padding: 20px 20px 0;
+  margin: 10px 0;
 }
 .article-title {
   text-decoration: none;
@@ -553,7 +516,6 @@ a.article-title:hover {
 }
 .article-entry {
   color: #555;
-  padding: 0 20px;
 }
 .article-entry:before,
 .article-entry:after {
@@ -586,11 +548,13 @@ a.article-title:hover {
   margin: 1.1em 0;
 }
 .article-entry a {
-  color: #258fb8;
+  color: #ffa500;
   text-decoration: none;
 }
 .article-entry a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background-color: #ffa500;
+  color: #fff;
 }
 .article-entry ul,
 .article-entry ol,
@@ -629,9 +593,9 @@ a.article-title:hover {
   text-align: center;
 }
 .article-entry blockquote footer {
-  font-size: 14px;
+  font-size: 13px;
   margin: 1.6em 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 .article-entry blockquote footer cite:before {
   content: "—";
@@ -803,7 +767,6 @@ a.article-title:hover {
 }
 .article-nav-caption {
   text-transform: uppercase;
-  letter-spacing: 2px;
   color: #ddd;
   line-height: 1em;
   font-weight: bold;
@@ -836,7 +799,7 @@ a.article-title:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font: 14px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   padding: 0 15px;
   color: #555;
   outline: none;
@@ -954,7 +917,7 @@ a.article-title:hover {
   color: #258fb8;
 }
 .archives-wrap {
-  margin: 50px 0;
+  margin: 10px 0 50px 0;
 }
 .archives:before,
 .archives:after {
@@ -992,22 +955,15 @@ a.article-title:hover {
   overflow: hidden;
   break-inside: avoid-column;
 }
-.archive-article-inner {
-  padding: 10px;
-  margin-bottom: 15px;
-}
 .archive-article-title {
   text-decoration: none;
   font-weight: bold;
-  color: #555;
-  -webkit-transition: color 0.2s;
-  -moz-transition: color 0.2s;
-  -ms-transition: color 0.2s;
-  transition: color 0.2s;
+  color: #ffa500;
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #258fb8;
+  color: #fff;
+  background-color: #ffa500;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1018,7 +974,7 @@ a.article-title:hover {
   font-size: 0.85em;
   line-height: 1em;
   margin-bottom: 0.5em;
-  display: block;
+  margin-right: 26px;
 }
 #page-nav {
   margin: 50px auto;
@@ -1101,7 +1057,7 @@ a.article-title:hover {
   border-width: 1px 0;
   overflow: auto;
   color: #ccc;
-  line-height: 22.400000000000002px;
+  line-height: 20.8px;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
@@ -1152,12 +1108,15 @@ a.article-title:hover {
 .article-entry .highlight figcaption a {
   float: right;
 }
+.article-entry .highlight .gutter .line {
+  padding-left: 20px;
+}
 .article-entry .highlight .gutter pre {
   text-align: right;
   padding-right: 20px;
 }
 .article-entry .highlight .line {
-  height: 22.400000000000002px;
+  height: 20.8px;
 }
 .article-entry .highlight .line.marked {
   background: #515151;
@@ -1195,7 +1154,7 @@ a.article-title:hover {
 .article-entry .gist .gist-file .gist-meta {
   background: #2d2d2d;
   color: #999;
-  font: 0.85em -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font: 0.85em Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
