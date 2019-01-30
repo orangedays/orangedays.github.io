@@ -1,5 +1,5 @@
 .archives-wrap
-  margin: block-margin 0
+  margin: 10px 0 50px 0
 
 .archives
   clearfix()
@@ -20,19 +20,14 @@
 .archive-article
   avoid-column-break()
 
-.archive-article-inner
-  @extend $block
-  padding: 10px
-  margin-bottom: 15px
-
 .archive-article-title
   text-decoration: none
   font-weight: bold
-  color: color-default
-  transition: color 0.2s
+  color: my-link
   line-height: line-height
   &:hover
-    color: color-link
+    color: #fff
+    background-color: my-link
 
 .archive-article-footer
   margin-top: 1em
@@ -43,7 +38,7 @@
   font-size: 0.85em
   line-height: 1em
   margin-bottom: 0.5em
-  display: block
+  margin-right: 26px;
 
 #page-nav
   clearfix()

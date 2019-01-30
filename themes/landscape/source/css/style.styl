@@ -38,6 +38,7 @@ body
 
 .inner
   column(columns)
+  margin: 0
 
 .left, .alignleft
   float: left
@@ -55,14 +56,14 @@ body
   overflow: hidden
 
 #wrap
-  height: 100%
   width: 100%
+  min-height: 100%
   position: absolute
   top: 0
   left: 0
   transition: 0.2s ease-out
   z-index: 1
-  background: color-background
+  background: #fff
   .mobile-nav-on &
     left: mobile-nav-width
 
@@ -75,6 +76,9 @@ if sidebar is left
   @media mq-normal
     #main
       float: right
+
+#main
+  float: none;
 
 @import "_extend"
 @import "_partial/header"
